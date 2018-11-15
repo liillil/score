@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+		<mvc:annotation-driven />
+
+		<context:component-scan base-package="cn.java.sams">
+			<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+			<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
+		</context:component-scan>
+
+		<!-- 为springmvc指定视图解析器 ,对传过来的viewName进行视图解析，加上前缀和后缀，以此得到相应的jsp文件的完整路径-->
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/jsp/"></property><!-- 前缀 -->
+			<property name="suffix" value=".jsp"></property><!-- 后缀 -->
+		</bean>
+
+		
+		<!-- 配置国际化资源文件，用于截获异常提示，并将之替换 -->
+		<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+			<property name="basename" value="i18n"></property>
+		</bean>
+</beans>
