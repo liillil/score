@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-@Entity
-@Table(name="user")
+//@Entity
+//@Table(name="s_user")
 public class User {
 	/**
 	 * 主键

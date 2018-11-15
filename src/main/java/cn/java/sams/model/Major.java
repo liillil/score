@@ -7,8 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="major")
+//@Entity
+//@Table(name="s_major")
 public class Major {
 	/**
 	 * 主键

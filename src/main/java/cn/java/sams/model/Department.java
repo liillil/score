@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity
-@Table(name="department")
+//@Entity
+//@Table(name="s_department")
 public class Department {
 	/**
 	 * 主键
