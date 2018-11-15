@@ -2,6 +2,7 @@ package cn.java.sams.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -34,10 +35,7 @@ public class Courses {
 	 * 学期
 	 */
 	private String term;
-	/**
-	 * 所在专业
-	 */
-	private Major mojor;
+	
 	/**
 	 * 所在班级编号
 	 */
@@ -50,7 +48,7 @@ public class Courses {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="teacher_id")
 	public Teacher getTeacher() {
 		return teacher;
@@ -72,7 +70,7 @@ public class Courses {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="student_id")
 	public Student getStudent() {
 		return student;
@@ -87,13 +85,7 @@ public class Courses {
 	public void setTerm(String term) {
 		this.term = term;
 	}
-	@Column(name="mojor_id")
-	public Major getMojor() {
-		return mojor;
-	}
-	public void setMojor(Major mojor) {
-		this.mojor = mojor;
-	}
+	
 	@Column(name="s_class",length=20)
 	public String getsClass() {
 		return sClass;

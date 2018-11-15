@@ -3,6 +3,7 @@ package cn.java.sams.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +52,10 @@ public class Student {
 	 * 成绩表
 	 */
 	private List<Courses> lists;
+	/**
+	 * 所在专业
+	 */
+	private Major mojor;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -60,7 +65,7 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Column(name="student_num",length=20)
+	@Column(name="student_num",length=20,unique=true,nullable=false)
 	public String getStudentNum() {
 		return studentNum;
 	}
@@ -110,12 +115,19 @@ public class Student {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	@OneToMany(mappedBy="student")
+	@OneToMany(mappedBy="student",cascade=CascadeType.REMOVE)
 	public List<Courses> getLists() {
 		return lists;
 	}
 	public void setLists(List<Courses> lists) {
 		this.lists = lists;
+	}
+	@Column(name="mojor_id")
+	public Major getMojor() {
+		return mojor;
+	}
+	public void setMojor(Major mojor) {
+		this.mojor = mojor;
 	}
 	public Student() {
 		super();
