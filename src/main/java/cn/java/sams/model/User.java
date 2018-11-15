@@ -21,9 +21,12 @@ public class User {
 	 */
 	private String userId;
 	/**
-	 * 
+	 * 密码
 	 */
 	private String password;
+	/**
+	 * 姓名
+	 */
 	private String username;
 	@Temporal(TemporalType.DATE)
 	private Date regDate;

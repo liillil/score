@@ -31,7 +31,7 @@ public class Department {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Column(name="d_id",length=11)
+	@Column(name="d_id",length=11,unique=true)
 	public int getDepartmentId() {
 		return departmentId;
 	}
