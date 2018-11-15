@@ -10,8 +10,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name="major")
 public class Major {
+	/**
+	 * 主键
+	 */
 	private int id ;
+	/**
+	 * 专业名称
+	 */
 	private String mName;
+	/**
+	 * 所在院系
+	 */
 	private Department dpt;
 	@Id
 	@GeneratedValue
