@@ -7,6 +7,7 @@ public interface BaseService<T> {
 	 * @return
 	 */
 	public T getOne(int id);
+
 	//----------------------------------------------------------
 	/**
 	 * 修改或添加一条数据
@@ -26,5 +27,12 @@ public interface BaseService<T> {
 	 * @return
 	 */
 	public int determineWhetherAccountPasswordIsCorrect(String id, String password,String jpql);
-	
+		
+	/**
+	 * 添加一条数据
+	 * @param t
+	 */
+	public void add(T t);
+
+
 }
