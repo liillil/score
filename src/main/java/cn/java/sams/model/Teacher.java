@@ -6,13 +6,16 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-//@Entity
-//@Table(name="s_teacher")
+@Entity
+@Table(name="s_teacher")
 public class Teacher {
 	private int id;
 	private String tName;
@@ -24,7 +27,7 @@ public class Teacher {
 	private Department dpt;
 	private List<Courses> lists;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}
@@ -74,7 +77,8 @@ public class Teacher {
 	public void setQq(String qq) {
 		this.qq = qq;
 	}
-	@Column(name="dpt")
+	@ManyToOne
+	@JoinColumn(name="dpt")
 	public Department getDpt() {
 		return dpt;
 	}
@@ -90,6 +94,11 @@ public class Teacher {
 	}
 	public Teacher() {
 		super();
+	}
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", tName=" + tName + ", teacherNum=" + teacherNum + ", password=" + password
+				+ ", dateOfEntry=" + dateOfEntry + ", phone=" + phone + ", qq=" + qq + "]";
 	}
 	
 	

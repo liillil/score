@@ -30,4 +30,7 @@
 		<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
 			<property name="basename" value="i18n"></property>
 		</bean>
+		
+		<!-- 配置直接转发 -->
+		<mvc:view-controller path=""  view-name="login"/>
 </beans>

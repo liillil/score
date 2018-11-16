@@ -4,12 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-//@Entity
-//@Table(name="s_courses")
+@Entity
+@Table(name="s_courses")
 public class Courses {
 	/**
 	 * 主键
@@ -41,14 +42,14 @@ public class Courses {
 	 */
 	private String sClass;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="teacher_id")
 	public Teacher getTeacher() {
 		return teacher;
@@ -70,7 +71,7 @@ public class Courses {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name="student_id")
 	public Student getStudent() {
 		return student;
@@ -95,6 +96,11 @@ public class Courses {
 	}
 	public Courses() {
 		super();
+	}
+	@Override
+	public String toString() {
+		return "Courses [id=" + id + ", teacher=" + teacher + ", cName=" + cName + ", score=" + score + ", student="
+				+ student + ", term=" + term + ", sClass=" + sClass + "]";
 	}
 	
 	

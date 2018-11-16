@@ -1,6 +1,7 @@
 package cn.java.sams.dao;
 
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -18,7 +19,6 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 				.getActualTypeArguments()[0];
 		return clazz;
 	}
-	
 	@Override
 	public T getOne(int id) {
 		

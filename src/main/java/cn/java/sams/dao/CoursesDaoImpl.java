@@ -11,7 +11,7 @@ public class CoursesDaoImpl extends BaseDaoImpl<Courses> implements CoursesDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Courses> getClassesResults(String classesNum,int pageNum,int pageSize) {
-		String jpql="from Courses c where sClass=?1 ORDER BY c.cName and c.student.studentName";
+		String jpql="from Courses c where sClass=?1 order by c.student.studentNum";
 		return entityManager.createQuery(jpql)
 			  .setParameter(1,classesNum)
 			  .setFirstResult((pageNum-1)*pageSize)

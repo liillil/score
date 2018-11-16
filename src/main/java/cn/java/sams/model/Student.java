@@ -6,15 +6,18 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-//@Entity
-//@Table(name="s_student")
+@Entity
+@Table(name="s_student")
 public class Student {
 	/**
 	 * 主键
@@ -55,10 +58,10 @@ public class Student {
 	/**
 	 * 所在专业
 	 */
-	private Major mojor;
+	private Major major;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}
@@ -122,15 +125,22 @@ public class Student {
 	public void setLists(List<Courses> lists) {
 		this.lists = lists;
 	}
-	@Column(name="mojor_id")
-	public Major getMojor() {
-		return mojor;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="mojor_id")
+	public Major getMajor() {
+		return major;
 	}
-	public void setMojor(Major mojor) {
-		this.mojor = mojor;
+	public void setMajor(Major major) {
+		this.major = major;
 	}
 	public Student() {
 		super();
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", studentNum=" + studentNum + ", password=" + password + ", studentName="
+				+ studentName + ", phone=" + phone + ", qq=" + qq + ", dateOfBirth=" + dateOfBirth + ", sex=" + sex
+				+ "]";
 	}
 	
 }

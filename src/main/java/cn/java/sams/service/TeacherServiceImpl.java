@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import cn.java.sams.dao.TeacherDao;
 import cn.java.sams.model.Teacher;
-@Service(" teacherService")
+@Service("teacherService")
 public class TeacherServiceImpl extends BaseServiceImpl<Teacher> implements TeacherService {
 
 	@Autowired

@@ -3,12 +3,14 @@ package cn.java.sams.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="s_major")
+@Entity
+@Table(name="s_major")
 public class Major {
 	/**
 	 * 主键
@@ -23,7 +25,7 @@ public class Major {
 	 */
 	private Department dpt;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}
@@ -38,7 +40,7 @@ public class Major {
 		this.mName = mName;
 	}
 	@ManyToOne
-	@Column(name="dpt")
+	@JoinColumn(name="dpt")
 	public Department getDpt() {
 		return dpt;
 	}
