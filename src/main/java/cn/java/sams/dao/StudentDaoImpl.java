@@ -1,7 +1,9 @@
 package cn.java.sams.dao;
 
-import cn.java.sams.model.Student;
+import org.springframework.stereotype.Repository;
 
+import cn.java.sams.model.Student;
+@Repository("studentDao")
 public class StudentDaoImpl extends BaseDaoImpl<Student> implements StudentDao{
 
 	@Override

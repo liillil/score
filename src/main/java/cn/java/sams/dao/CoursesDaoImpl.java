@@ -2,8 +2,10 @@ package cn.java.sams.dao;
 
 import java.util.List;
 
-import cn.java.sams.model.Courses;
+import org.springframework.stereotype.Repository;
 
+import cn.java.sams.model.Courses;
+@Repository("coursesDao")
 public class CoursesDaoImpl extends BaseDaoImpl<Courses> implements CoursesDao {
 
 	@SuppressWarnings("unchecked")

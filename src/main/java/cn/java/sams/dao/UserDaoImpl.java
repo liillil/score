@@ -1,8 +1,10 @@
 package cn.java.sams.dao;
 
 
-import cn.java.sams.model.User;
+import org.springframework.stereotype.Repository;
 
+import cn.java.sams.model.User;
+@Repository("userDao")
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 
 	@Override
