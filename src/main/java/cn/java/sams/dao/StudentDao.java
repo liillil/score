@@ -10,4 +10,11 @@ public interface StudentDao extends BaseDao<Student>{
 	 */
 	public Student getOneStudent(String studentNum);
 	
+	/**
+	 *  验证学号和密码是否存在
+	 * @param studentNum
+	 * @param password
+	 * @return
+	 */
+	public int getStudentOne(String studentNum,String password);
 }

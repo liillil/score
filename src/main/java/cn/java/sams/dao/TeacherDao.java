@@ -8,4 +8,12 @@ public interface TeacherDao extends BaseDao<Teacher> {
 	 * @return
 	 */
 	public Teacher getOneTeacher(String teacherNum);
+	
+	/**
+	 *  验证教师编号和密码是否存在
+	 * @param teacherNum
+	 * @param password
+	 * @return
+	 */
+	public int getTeacherOne(String teacherNum,String password);
 }

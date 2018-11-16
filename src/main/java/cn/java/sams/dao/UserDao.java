@@ -9,4 +9,12 @@ public interface UserDao extends BaseDao<User> {
 	 * @return
 	 */
 	public User getOneUser(String userId);
+	
+	/**
+	 *  验证管理员编号和密码是否存在
+	 * @param userId
+	 * @param password
+	 * @return
+	 */
+	public int getUserOne(String userId,String password);
 }

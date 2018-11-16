@@ -11,4 +11,10 @@ public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements TeacherDao{
 		return (Teacher) entityManager.createQuery(jpql).setParameter(1,teacherNum ).getSingleResult();
 	}
 
+	@Override
+	public int getTeacherOne(String teacherNum, String password) {
+		String jpql = "select count(t) from Teacher t where t.teacherNum=?1 and t.password=?2";
+		return determineWhetherAccountPasswordIsCorrect(teacherNum, password, jpql);
+	}
+
 }

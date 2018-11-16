@@ -12,7 +12,7 @@ public interface CoursesDao extends BaseDao<Courses>{
 	 * @param coursesName
 	 * @return
 	 */
-	public List<Courses> getClassesResults(String classesNum);
+	public List<Courses> getClassesResults(String classesNum,int pageNum,int pageSize);
 	
 	
 }
