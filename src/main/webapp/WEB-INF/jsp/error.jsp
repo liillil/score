@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>发生错误</h3>
+<h1>出现错误</h1>
 </body>
 </html>
