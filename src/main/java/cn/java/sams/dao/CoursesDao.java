@@ -1,18 +1,18 @@
 package cn.java.sams.dao;
 
-import java.util.List;
+
 
 import cn.java.sams.model.Courses;
 
 public interface CoursesDao extends BaseDao<Courses>{
 	/**
-	 *  查询班级成绩
+	 *  课程信息
 	 * @param classesNum
 	 * @param studentNum
 	 * @param coursesName
 	 * @return
 	 */
-	public List<Courses> getClassesResults(String classesNum,int pageNum,int pageSize);
+	public Courses getCoursesInfo(String cName);
 	
 	
 }

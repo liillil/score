@@ -54,7 +54,7 @@ public class Student {
 	/**
 	 * 成绩表
 	 */
-	private List<Courses> lists;
+	private List<Score> lists;
 	/**
 	 * 所在专业
 	 */
@@ -119,10 +119,10 @@ public class Student {
 		this.sex = sex;
 	}
 	@OneToMany(mappedBy="student",cascade=CascadeType.REMOVE)
-	public List<Courses> getLists() {
+	public List<Score> getLists() {
 		return lists;
 	}
-	public void setLists(List<Courses> lists) {
+	public void setLists(List<Score> lists) {
 		this.lists = lists;
 	}
 	@ManyToOne(fetch=FetchType.LAZY)

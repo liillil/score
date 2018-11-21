@@ -1,5 +1,7 @@
 package cn.java.sams.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.validator.constraints.br.CNPJ;
 @Entity
 @Table(name="s_courses")
 public class Courses {
@@ -24,23 +30,20 @@ public class Courses {
 	 * 课程名
 	 */
 	private String cName;
+
 	/**
-	 * 成绩
+	 * 开课日期
 	 */
-	private int score;
+	private Date term;
 	/**
-	 * 学生
+	 * 学分
 	 */
-	private Student student;
+	private int credit;
 	/**
-	 * 学期
+	 * 学时
 	 */
-	private String term;
+	private int period;
 	
-	/**
-	 * 所在班级编号
-	 */
-	private String sClass;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
@@ -64,43 +67,35 @@ public class Courses {
 	public void setcName(String cName) {
 		this.cName = cName;
 	}
-	@Column(name="score",length=3)
-	public int getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
-	@ManyToOne
-	@JoinColumn(name="student_id")
-	public Student getStudent() {
-		return student;
-	}
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-	@Column(name="term",length=20)
-	public String getTerm() {
+	@Column(name="Term")
+	@Temporal(TemporalType.DATE)
+	public Date getTerm() {
 		return term;
 	}
-	public void setTerm(String term) {
+	public void setTerm(Date term) {
 		this.term = term;
 	}
-	
-	@Column(name="s_class",length=20)
-	public String getsClass() {
-		return sClass;
+	@Column(length=5)
+	public int getCredit() {
+		return credit;
 	}
-	public void setsClass(String sClass) {
-		this.sClass = sClass;
+	public void setCredit(int credit) {
+		this.credit = credit;
+	}
+	@Column(length=5)
+	public int getPeriod() {
+		return period;
+	}
+	public void setPeriod(int period) {
+		this.period = period;
 	}
 	public Courses() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "Courses [id=" + id + ", teacher=" + teacher + ", cName=" + cName + ", score=" + score + ", student="
-				+ student + ", term=" + term + ", sClass=" + sClass + "]";
+		return "Courses [id=" + id + ", teacher=" + teacher + ", cName=" + cName + ", term=" + term + ", credit="
+				+ credit + ", period=" + period + "]";
 	}
 	
 	

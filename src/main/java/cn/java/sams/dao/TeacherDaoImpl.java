@@ -7,10 +7,10 @@ import cn.java.sams.model.Teacher;
 public class TeacherDaoImpl extends BaseDaoImpl<Teacher> implements TeacherDao{
 
 	@Override
-	public Teacher getOneTeacher(String teacherNum) {
-		String jpql = "from Teacher t where t.teacherNum=?1";
+	public Teacher getOneTeacher(String teacherName) {
+		String jpql = "from Teacher t where t.tName=?1";
 		
-		return (Teacher) entityManager.createQuery(jpql).setParameter(1,teacherNum ).getSingleResult();
+		return (Teacher) entityManager.createQuery(jpql).setParameter(1,teacherName).getSingleResult();
 	}
 
 	@Override

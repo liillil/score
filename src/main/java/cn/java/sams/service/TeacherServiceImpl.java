@@ -11,9 +11,9 @@ public class TeacherServiceImpl extends BaseServiceImpl<Teacher> implements Teac
 	@Autowired
 	private TeacherDao teacherDao;
 	@Override
-	public Teacher getOneTeacher(String teacherNum) {
+	public Teacher getOneTeacher(String teacherNane) {
 		
-		return teacherDao.getOneTeacher(teacherNum);
+		return teacherDao.getOneTeacher(teacherNane);
 	}
 
 	@Override

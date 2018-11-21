@@ -1,6 +1,6 @@
 package cn.java.sams.service;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +12,12 @@ public class CoursesServiceImpl extends BaseServiceImpl<Courses> implements Cour
 
 	@Autowired
 	private CoursesDao coursesDao;
+
 	@Override
-	public List<Courses> getClassesResults(String classesNum, int pageNum, int pageSize) {
-		return coursesDao.getClassesResults(classesNum, pageNum, pageSize);
+	public Courses getCoursesInfo(String cName) {
+		
+		return coursesDao.getCoursesInfo(cName);
 	}
+	
 
 }

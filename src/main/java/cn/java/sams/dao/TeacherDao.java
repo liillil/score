@@ -4,10 +4,10 @@ import cn.java.sams.model.Teacher;
 
 public interface TeacherDao extends BaseDao<Teacher> {
 	/**
-	 * 通过教师编号查询以为老师的信息
+	 * 通过教师名称查询以为老师的信息
 	 * @return
 	 */
-	public Teacher getOneTeacher(String teacherNum);
+	public Teacher getOneTeacher(String teacherName);
 	
 	/**
 	 *  验证教师编号和密码是否存在
