@@ -27,9 +27,9 @@
 
 		
 		<!-- 配置国际化资源文件，用于截获异常提示，并将之替换 -->
-		<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+		<!-- <bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
 			<property name="basename" value="i18n"></property>
-		</bean>
+		</bean> -->
 		
 		<!-- 配置直接转发 -->
 		<!-- <mvc:view-controller path=""  view-name="login"/> -->

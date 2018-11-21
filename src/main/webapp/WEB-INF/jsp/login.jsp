@@ -19,7 +19,7 @@ td {
 	<form action="${pageContext.request.contextPath }/loginView" method="post" style="text-align: center; margin-top: 225px">
 			
 					
-					<span  style="text-align: left; font-size:15px; color: red; font-weight: bolder;">${fail }</span><br><br>
+					<span  style="text-align: left; font-size:15px; color: red; font-weight: bolder;">${fail}</span><br><br>
 					&nbsp;账号:<input type="text" name="AccountNumber" style="width: 145px;"/><br><br>
 					密码:<input type="password" name="password" style="width: 145px;"/><br><br>
 			

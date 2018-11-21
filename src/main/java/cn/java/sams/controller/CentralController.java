@@ -69,7 +69,6 @@ public class CentralController {
 				model.addAttribute("fail", "账号或密码错误");
 				return "login";
 			}
-			;
 			model.addAttribute("student",ss.getOneStudent(AccountNumber));
 			return "/main";
 		case "teacher":
