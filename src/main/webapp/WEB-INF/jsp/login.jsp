@@ -16,7 +16,7 @@ td {
 </style>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/login" method="post" style="text-align: center; margin-top: 225px">
+	<form action="${pageContext.request.contextPath }/loginView" method="post" style="text-align: center; margin-top: 225px">
 			
 					
 					<span  style="text-align: left; font-size:15px; color: red; font-weight: bolder;">${fail }</span><br><br>

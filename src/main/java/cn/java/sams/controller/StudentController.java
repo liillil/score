@@ -19,13 +19,13 @@ public class StudentController {
 	@Autowired
 	private UserService us;
 	@RequestMapping("score")
-	public String info(@RequestParam(name="sign") int sign,
+	public String info(@RequestParam(name="studentNum") String studentNum,@RequestParam(name="sign") int sign,
 			Model model) {
 		Integer integer = null;
 		if(sign==1) {
 			integer = 1;
 		}
-		
+		model.addAttribute("student", ss.getOneStudent(studentNum));
 		model.addAttribute("sign", integer);
 		return "/main";
 		

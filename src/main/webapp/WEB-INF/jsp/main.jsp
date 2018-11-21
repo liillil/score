@@ -13,9 +13,9 @@
 		<hr>
 	</div>
 	<div>
-		<a href="${pageContext.request.contextPath }/score?sign=2">个人成绩</a><span style="font-size: 30px">　|　</span>
-		<a href="${pageContext.request.contextPath }/classesScore">班级成绩</a><span style="font-size: 30px">　|　</span>
-		<a href="${pageContext.request.contextPath }/score?sign=1">个人信息</a>
+		<a href="${pageContext.request.contextPath }/score?student=${student.studentNum}&sign=2">个人成绩</a><span style="font-size: 30px">　|　</span>
+		<a href="${pageContext.request.contextPath }/classesScore?student=${student.studentNum}">班级成绩</a><span style="font-size: 30px">　|　</span>
+		<a href="${pageContext.request.contextPath }/score?student=${student.studentNum}&sign=1">个人信息</a>
 		<hr>
 	</div>
 	<c:if test="${ empty sign }">

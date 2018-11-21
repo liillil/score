@@ -32,5 +32,5 @@
 		</bean>
 		
 		<!-- 配置直接转发 -->
-		<mvc:view-controller path=""  view-name="login"/>
+		<!-- <mvc:view-controller path=""  view-name="login"/> -->
 </beans>

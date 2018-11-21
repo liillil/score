@@ -48,8 +48,14 @@ public class CentralController {
 		binder.registerCustomEditor(Double.class,  new CustomNumberEditor(Double.class,true));
 	}
 	
-	@RequestMapping("/login")
-	public String login(@RequestParam(name="AccountNumber",required=false)String AccountNumber,
+	
+	@RequestMapping("login")
+	public String login() {
+		return "/login";
+	}
+	
+	@RequestMapping("loginView")
+	public String loginView(@RequestParam(name="AccountNumber",required=false)String AccountNumber,
 			@RequestParam(name="password",required=false) String password,
 			@RequestParam(name="accountType",required=false) String accountType,
 			Model model) {
@@ -87,7 +93,8 @@ public class CentralController {
 	}
 	
 	@RequestMapping(name="classesScore")
-	public String classResult(Model model) {
+	public String classResult(Model model,@RequestParam(name="studentNum") String studentNum) {
+		model.addAttribute("student", ss.getOneStudent(studentNum));
 		model.addAttribute("sign", 2);
 		return "/main";
 	}
